@@ -1,6 +1,6 @@
 # Bootcamp de Python - Jornada de Dados
 ## Objetivo
-Este repositório foi criado para consolidar os conhecimentos adquiridos durante o Bootcamp de Python da [Jornada de Dados](https://suajornadadedados.com.br/). O principal objetivo é praticar a linguagem Python, focando na documentação adequada de projetos de dados e na utilização de Git e GitHub para controle de versão e colaboração.
+Este repositório foi criado para consolidar os conhecimentos adquiridos durante o Bootcamp de Python da [Jornada de Dados](https://suajornadadedados.com.br/). O principal objetivo é praticar a linguagem **Python**, focando na documentação adequada de projetos de dados e na utilização de **Git** e **GitHub** para controle de versão e colaboração.
 
 Um intensivo único para iniciar com Python e ir até tópicos avançados (API por exemplo) para resolução de problemas reais. O repositório oficial desse bootcamp pode ser encontrado [aqui](https://github.com/lvgalvao/data-engineering-roadmap/tree/main/Bootcamp%20-%20Python%20para%20dados).
 

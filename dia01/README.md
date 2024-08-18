@@ -18,7 +18,7 @@ Além disso, utilizamos o conceito de _f-strings_ para interpolação de variáv
 
 Para reforçar os conceitos abordados, foram desenvolvidos três exercícios práticos utilizando as funções mencionadas. O código desses exercícios pode ser encontrado no arquivo [`main.py`](./main.py).
 
-Também foi proposto um desafio adicional, focado no cálculo de um KPI (Key Performance Indicator). A solução desse desafio está disponível no arquivo [`kpi.py`](./kpi.py).
+Também foi proposto um desafio adicional, focado no cálculo de um **KPI**. A solução desse desafio está disponível no arquivo [`kpi.py`](./kpi.py).
 
 ## Como Executar
 
