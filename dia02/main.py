@@ -89,28 +89,146 @@ print(f"Concatenacao de duas strings: {string_concat}")
 # #### Booleanos (`bool`)
 
 # 16. Escreva um programa que avalie duas expressões booleanas inseridas pelo usuário e retorne o resultado da operação AND entre elas.
-bool1 = bool(input("Insira o primeiro booleano: "))
-bool2 = bool(input("Insira o segundo booleano: "))
-op_bool = bool1 and bool2
-print(f"A operacao 'and' entre os dois booleanos fornecidos é igual a: {op_bool}")
+bool1 = input("Insira o primeiro booleano: ")
+
+if bool1 == "True":
+    bool1 = True
+    bool2 = input("Insira o segundo booleano: ")
+    if bool2 == "True":
+        bool2 = True
+        op_bool = bool1 and bool2
+        print(f"A operacao 'and' entre os dois booleanos fornecidos é igual a: {op_bool}")
+    elif bool2 == "False":
+        bool2 = False
+        op_bool = bool1 and bool2
+        print(f"A operacao 'and' entre os dois booleanos fornecidos é igual a: {op_bool}")
+    else:
+        print("Entrada inválida para o segundo booleano digitado")
+
+elif bool1 == "False":
+    bool1 = False
+    bool2 = input("Insira o segundo booleano: ")
+    if bool2 == "True":
+        bool2 = True
+        op_bool = bool1 and bool2
+        print(f"A operacao 'and' entre os dois booleanos fornecidos é igual a: {op_bool}")
+    elif bool2 == "False":
+        bool2 = False
+        op_bool = bool1 and bool2
+        print(f"A operacao 'and' entre os dois booleanos fornecidos é igual a: {op_bool}")
+    else:
+        print("Entrada inválida para o segundo booleano digitado")
+
+else:
+    print("Entrada inválida para o primeiro booleano")
 
 # 17. Crie um programa que receba dois valores booleanos do usuário e retorne o resultado da operação OR.
+bool1 = input("Insira o primeiro booleano: ")
 
+if bool1 == "True":
+    bool1 = True
+    bool2 = input("Insira o segundo booleano: ")
+    if bool2 == "True":
+        bool2 = True
+        op_bool = bool1 or bool2
+        print(f"A operacao 'or' entre os dois booleanos fornecidos é igual a: {op_bool}")
+    elif bool2 == "False":
+        bool2 = False
+        op_bool = bool1 or bool2
+        print(f"A operacao 'or' entre os dois booleanos fornecidos é igual a: {op_bool}")
+    else:
+        print("Entrada inválida para o segundo booleano digitado")
+
+elif bool1 == "False":
+    bool1 = False
+    bool2 = input("Insira o segundo booleano: ")
+    if bool2 == "True":
+        bool2 = True
+        op_bool = bool1 or bool2
+        print(f"A operacao 'or' entre os dois booleanos fornecidos é igual a: {op_bool}")
+    elif bool2 == "False":
+        bool2 = False
+        op_bool = bool1 or bool2
+        print(f"A operacao 'or' entre os dois booleanos fornecidos é igual a: {op_bool}")
+    else:
+        print("Entrada inválida para o segundo booleano digitado")
+
+else:
+    print("Entrada inválida para o primeiro booleano")
 
 # 18. Desenvolva um programa que peça ao usuário para inserir um valor booleano e, em seguida, inverta esse valor.
+bool1 = input("Insira um valor booleano: ")
 
+if bool1 == "True":
+    bool1 = False
+elif bool1 == "False":
+    bool1 = True
+else:
+    print("Entrada inválida")
+
+print(f"O valor invertido da entrada é igual a: {bool1}")
 
 # 19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
+bool1 = True
+bool2 = False
+bool_comp = (bool1 == bool2)
 
+if bool_comp == True:
+    print("Os dois booleanos são iguais")
+else:
+    print("Os dois booleanos são diferentes")
 
 # 20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
+bool1 = True
+bool2 = False
+bool_comp = (bool1 != bool2)
 
+if bool_comp == True:
+    print("Os dois booleanos são diferentes")
+else:
+    print("Os dois booleanos são iguais")
 
+# #### TypeError, Type Check e Type Conversion
 
-# #### try-except e if
+# Exercício 21: Conversor de Temperatura
+# Escreva um programa que converta a temperatura de Celsius para Fahrenheit. 
+# O programa deve solicitar ao usuário a temperatura em Celsius e, utilizando try-except, garantir que a entrada seja numérica, 
+# tratando qualquer ValueError. Imprima o resultado em Fahrenheit ou uma mensagem de erro se a entrada não for válida.
+try:
+    temp_c = float(input("Insira uma temperatura em graus Celsius: "))
+    temp_f = (temp_c * 9/5) + 32
+    print(f"A temperatura convertida para Fahreinheit é: {temp_f}ºF")
+except ValueError:
+    print("O valor inserido não é um número")
 
-# 21: Conversor de Temperatura
-# 22: Verificador de Palíndromo
-# 23: Calculadora Simples
-# 24: Classificador de Números
-# 25: Conversão de Tipo com Validação
+# Exercício 22: Verificador de Palíndromo
+# Crie um programa que verifica se uma palavra ou frase é um palíndromo (lê-se igualmente de trás para frente, 
+# desconsiderando espaços e pontuações). Utilize try-except para garantir que a entrada seja uma string. 
+# Dica: Utilize a função isinstance() para verificar o tipo da entrada.
+string = input("Insira uma string: ")
+
+if isinstance(string, str):
+    string_formatada = string.replace(" ","").lower()
+    if string_formatada == string_formatada[::-1]:
+        print("A string fornecida é um palíndromo")
+    else:
+        print("A string fornecida não é um palíndromo")
+else:
+    print("Entrada inválida")
+
+# Exercício 23: Calculadora Simples
+# Desenvolva uma calculadora simples que aceite duas entradas numéricas e um operador (+, -, *, /) do usuário. 
+# Use try-except para lidar com divisões por zero e entradas não numéricas. Utilize if-elif-else para realizar a operação 
+# matemática baseada no operador fornecido. Imprima o resultado ou uma mensagem de erro apropriada.
+
+# Exercício 24: Classificador de Números
+# Escreva um programa que solicite ao usuário para digitar um número. Utilize try-except para assegurar que a entrada seja 
+# numérica e utilize if-elif-else para classificar o número como "positivo", "negativo" ou "zero". 
+# Adicionalmente, identifique se o número é "par" ou "ímpar".
+
+# Exercício 25: Conversão de Tipo com Validação
+# Crie um script que solicite ao usuário uma lista de números separados por vírgula.
+# O programa deve converter a string de entrada em uma lista de números inteiros. 
+# Utilize try-except para tratar a conversão de cada número e validar que cada elemento da lista convertida é um inteiro. 
+# Se a conversão falhar ou um elemento não for um inteiro, imprima uma mensagem de erro. 
+# Se a conversão for bem-sucedida para todos os elementos, imprima a lista de inteiros.
