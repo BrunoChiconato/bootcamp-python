@@ -220,11 +220,51 @@ else:
 # Desenvolva uma calculadora simples que aceite duas entradas numéricas e um operador (+, -, *, /) do usuário. 
 # Use try-except para lidar com divisões por zero e entradas não numéricas. Utilize if-elif-else para realizar a operação 
 # matemática baseada no operador fornecido. Imprima o resultado ou uma mensagem de erro apropriada.
+try:
+    num1 = float(input("Insira o primeiro valor: "))
+    num2 = float(input("Insira o segundo valor: "))
+    operacao = input("Insira um operador: ")
+
+    if operacao == "+":
+        resultado = num1 + num2
+        print(f"O resultado de {num1} {operacao} {num2} é igual a: {resultado}")
+    elif operacao == "-":
+        resultado = num1 - num2
+        print(f"O resultado de {num1} {operacao} {num2} é igual a: {resultado}")
+    elif operacao == "*":
+        resultado = num1 * num2
+        print(f"O resultado de {num1} {operacao} {num2} é igual a: {resultado}")
+    elif operacao == "/":
+        resultado = num1 / num2
+        print(f"O resultado de {num1} {operacao} {num2} é igual a: {resultado}")
+    else:
+        print("Insira um operador válido")
+
+except ValueError:
+    print("Insira um valor numérico")
+
+except ZeroDivisionError:
+    print("Não é possível realizar divisões por zero")
 
 # Exercício 24: Classificador de Números
 # Escreva um programa que solicite ao usuário para digitar um número. Utilize try-except para assegurar que a entrada seja 
 # numérica e utilize if-elif-else para classificar o número como "positivo", "negativo" ou "zero". 
 # Adicionalmente, identifique se o número é "par" ou "ímpar".
+try:
+    num = int(input("Insira um número qualquer: "))
+
+    if num > 0:
+        if num % 2 == 0:
+            print("O número fornecido é positivo e par")
+        else:
+            print("O número fornecido é positivo e ímpar")
+    elif num < 0:
+        print("O número fornecido é negativo")
+    elif num == 0:
+        print("O número fornecido é igual a zero")
+        
+except ValueError:
+    print("Não é permitido entradas não numéricas")
 
 # Exercício 25: Conversão de Tipo com Validação
 # Crie um script que solicite ao usuário uma lista de números separados por vírgula.
@@ -232,3 +272,21 @@ else:
 # Utilize try-except para tratar a conversão de cada número e validar que cada elemento da lista convertida é um inteiro. 
 # Se a conversão falhar ou um elemento não for um inteiro, imprima uma mensagem de erro. 
 # Se a conversão for bem-sucedida para todos os elementos, imprima a lista de inteiros.
+
+string_numeros = input("Forneça uma lista de números separados por ',': ")
+string_numeros_formatada = string_numeros.replace(" ","")
+lista_numeros_string = string_numeros_formatada.split(",")
+
+lista_numeros_int = []
+
+for num_str in lista_numeros_string:
+    try:
+        lista_numeros_int.append(int(num_str))
+        print(f"Conversão da string '{num_str}' para inteiro foi realizada com sucesso")
+    except ValueError:
+        print(f"Conversão da string '{num_str}' para inteiro não funcionou, pois '{num_str}' não é um número")
+
+if lista_numeros_int:
+    print(f"A lista de números convertida para inteiro é:\n- {lista_numeros_int}")
+else:
+    print("A lista de números está vazia pois nenhum dado inserido era um número")
