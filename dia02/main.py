@@ -63,17 +63,49 @@ string_upper = string.upper()
 print(f"Sua string com todas as letras em maiúsculo é igual a: {string.upper}")
 
 # 12. Crie um programa que receba o nome completo do usuário e imprima o nome com todas as letras minúsculas.
+nome = input("Escreva seu nome: ")
+nome_min = nome.lower()
+print(f"Seu nome com todas as letras em minúsculo é: {nome_min}")
+
 # 13. Desenvolva um programa que peça ao usuário para inserir uma frase e, em seguida, imprima esta frase sem espaços em branco no início e no final.
+frase = input("Forneça uma frase: ")
+frase_sem_espacos = frase.strip()
+print(f"A frase sem espaços em branco é: {frase_sem_espacos}")
+
 # 14. Faça um programa que peça ao usuário para digitar uma data no formato "dd/mm/aaaa" e, em seguida, imprima o dia, o mês e o ano separadamente.
+data = input("Insira uma data no formado dd/mm/aaaa: ")
+data_separada = data.split('/')
+dia = data_separada[0]
+mes = data_separada[1]
+ano = data_separada[2]
+print(f"Dia: {dia}\nMes: {mes}\nAno: {ano}")
+
 # 15. Escreva um programa que concatene duas strings fornecidas pelo usuário.
+string1 = input("Forneca a primeira string: ")
+string2 = input("Forneca a segunda string: ")
+string_concat = string1 + string2
+print(f"Concatenacao de duas strings: {string_concat}")
 
 # #### Booleanos (`bool`)
 
 # 16. Escreva um programa que avalie duas expressões booleanas inseridas pelo usuário e retorne o resultado da operação AND entre elas.
+bool1 = bool(input("Insira o primeiro booleano: "))
+bool2 = bool(input("Insira o segundo booleano: "))
+op_bool = bool1 and bool2
+print(f"A operacao 'and' entre os dois booleanos fornecidos é igual a: {op_bool}")
+
 # 17. Crie um programa que receba dois valores booleanos do usuário e retorne o resultado da operação OR.
+
+
 # 18. Desenvolva um programa que peça ao usuário para inserir um valor booleano e, em seguida, inverta esse valor.
+
+
 # 19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
+
+
 # 20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
+
+
 
 # #### try-except e if
 
