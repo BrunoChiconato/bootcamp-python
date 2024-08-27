@@ -137,6 +137,26 @@ for i, trans in enumerate(list_dict_transacao):
 
 ### Exercício 6. Contagem de Palavras em Textos
 # Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele.
+import re
+
+texto = input("Digite um texto: ").strip()
+
+texto_limpo = re.sub(r'[^A-Za-z0-9áéíóúàèìòùâêîôûãõñçÇ ]+', '', texto)
+
+palavras = texto_limpo.split()
+
+contagem_palavras = {}
+
+for palavra in palavras:
+    palavra = palavra.lower()
+    if palavra in contagem_palavras:
+        contagem_palavras[palavra] += 1
+    else:
+        contagem_palavras[palavra] = 1
+
+for palavra, contagem in contagem_palavras.items():
+    if contagem_palavras.get(palavra) == 1:
+        print(f"'{palavra}': {contagem}")
 
 ### Exercício 7. Normalização de Dados
 # Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1.
