@@ -174,6 +174,26 @@ for palavra, contagem in contagem_palavras.items():
 
 ### Exercício 11. Leitura de Dados até Flag
 # Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
+condicao = True
+keys = ["dado"]
+list_dict_dados = []
+
+while condicao:
+    dict_dados = {}
+    for key in keys:
+        dict_dados[key] = input("Insira um dado (digite 'sair' para parar de fornecer dados): ")
+
+        if dict_dados.get(key).lower() == "sair":
+            condicao = False
+            break
+        else:
+            list_dict_dados.append(dict_dados)
+
+if list_dict_dados:
+    print("Os dados de entrada foram:")
+    for dict_dados in list_dict_dados:
+        for value in dict_dados.values():
+            print(f"- {value}")
 
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
