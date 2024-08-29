@@ -166,6 +166,41 @@ for palavra, contagem in contagem_palavras.items():
 
 ### Exercício 9. Extração de Subconjuntos de Dados
 # Objetivo:** Dada uma lista de números, extrair apenas aqueles que são pares.
+lista_numeros = []
+condicao = True
+
+while condicao:
+    try:
+        numero = float(input("Forneça um número: "))
+        lista_numeros.append(numero)
+
+        while condicao:
+            resposta = input("Deseja inserir mais números? (S/N): ").upper()
+
+            if resposta == "N":
+                condicao = False
+                break
+            elif resposta == "S":
+                break
+            else:
+                print("Resposta inválida. Insira apenas 'S' para continuar ou 'N' para parar.")
+
+        if not condicao:
+            break
+
+    except ValueError:
+        print("Insira apenas números!")
+
+print(f"Lista fornecida: {lista_numeros}")
+
+numeros_pares = [num for num in lista_numeros if num % 2 == 0]
+
+if numeros_pares:
+    print("Números pares dentro da lista fornecida:")
+    for num in numeros_pares:
+        print(f"- {num}")
+else:
+    print("Sem números pares na lista fornecida")
 
 ### Exercício 10. Agregação de Dados por Categoria
 # Objetivo:** Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
