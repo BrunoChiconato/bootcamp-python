@@ -197,6 +197,23 @@ if list_dict_dados:
 
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
+condicao = True
+intervalo_comparacao = [5, 100]
+
+min_intervalo = intervalo_comparacao[0] 
+max_intervalo = intervalo_comparacao[1]
+
+while condicao:
+    try:
+        numero = float(input(f"Insira um número entre {min_intervalo} e {max_intervalo}: "))
+
+        if numero > min_intervalo and numero < max_intervalo:
+            print("Entrada válida!")
+            condicao = False
+        else:
+            print("Insira um número dentro do intervalo fornecido!")
+    except ValueError:
+        print("Insira apenas números!")
 
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
