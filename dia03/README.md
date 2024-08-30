@@ -43,7 +43,10 @@ Para executar os scripts Python com as soluções dos exercícios, siga os passo
    ```
 4. Execute os scripts Python desejados com os seguintes comandos:
    ```sh
-   python exercicios.py
+   python main.py
+   ```
+   ```sh
+   python desafio.py
    ```
 
 A execução desses scripts permitirá revisar os conceitos abordados, verificar os resultados dos exercícios propostos e explorar os exemplos práticos apresentados na aula.
