@@ -204,6 +204,57 @@ else:
 
 ### Exercício 10. Agregação de Dados por Categoria
 # Objetivo:** Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
+condicao = True
+vendas = []
+keys = ["Categoria","Venda"]
+
+while condicao:
+    dict_vendas = {}
+
+    while True:
+        categoria = input("Insira a categoria da venda: ").upper()
+
+        if not categoria.isalpha():
+            print("Insira apenas caracteres no campo 'categoria'!")
+        else:
+            dict_vendas[keys[0]] = categoria
+            break
+
+    while True:
+        try:
+            venda = float(input("Insira o valor da venda: "))
+            dict_vendas[keys[1]] = venda
+            break
+        except ValueError:
+            print("Insira apenas valores para o campo 'venda'!")
+
+    vendas.append(dict_vendas)
+
+    while True:
+        resposta = input("Deseja inserir mais registros de vendas? (S/N): ").upper()
+        
+        if resposta == "N":
+            condicao = False
+            break
+        if resposta == "S":
+            break
+        else:
+            print("Insira apenas 'S' ou 'N'")
+
+total_vendas_por_categoria = {}
+
+for venda in vendas:
+    categoria = venda["Categoria"]
+    valor = venda["Venda"]
+    
+    if categoria in total_vendas_por_categoria:
+        total_vendas_por_categoria[categoria] += valor
+    else:
+        total_vendas_por_categoria[categoria] = valor
+
+print("\nTotal de vendas por categoria:")
+for categoria, total in total_vendas_por_categoria.items():
+    print(f"{categoria}: R${total:.2f}")
 
 ### Exercícios com WHILE
 
