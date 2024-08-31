@@ -163,6 +163,24 @@ for palavra, contagem in contagem_palavras.items():
 
 ### Exercício 8. Filtragem de Dados Faltantes
 # Objetivo:** Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando
+list_usuarios = [
+    {"Nome":"Bruno Chiconato", "E-mail":"brunochiconato@example.com"},
+    {"Nome":"Luciano Vasconcelos", "E-mail":""},
+    {"Nome":"", "E-mail":"roberto@example.com"}
+]
+
+list_filtrado = []
+
+for dict_usuarios in list_usuarios:
+    dict_filtrado = {}
+    nome = dict_usuarios.get("Nome")
+    email = dict_usuarios.get("E-mail")
+    if nome != "" and email != "":
+        dict_filtrado["Nome"] = nome
+        dict_filtrado["E-mail"] = email
+        list_filtrado.append(dict_filtrado)
+
+print(f"Lista de usuários filtrada:\n{list_filtrado}")
 
 ### Exercício 9. Extração de Subconjuntos de Dados
 # Objetivo:** Dada uma lista de números, extrair apenas aqueles que são pares.
