@@ -160,6 +160,39 @@ for palavra, contagem in contagem_palavras.items():
 
 ### Exercício 7. Normalização de Dados
 # Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1.
+condicao = True
+list_nums = []
+
+while condicao:
+    while True:
+        try:
+            num = float(input("Forneça um número: "))
+            list_nums.append(num)
+            break
+        except ValueError:
+            print("Insira apenas números!")
+
+    while True:
+        resposta = input("Deseja inserir mais números? (S/N): ").upper()
+
+        if resposta == "N":
+            condicao = False
+            break
+        elif resposta == "S":
+            break
+        else:
+            print("Insira apenas 'S' ou 'N'!")
+
+list_normalized = []
+
+num_max = max(list_nums)
+num_min = min(list_nums)
+
+for num in list_nums:
+    num_normalized = (num - num_min)/(num_max - num_min)
+    list_normalized.append(round(num_normalized, 2))
+
+print(f"A lista de números fornecida normalizada é:\n{list_normalized}")
 
 ### Exercício 8. Filtragem de Dados Faltantes
 # Objetivo:** Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando
@@ -321,9 +354,37 @@ while condicao:
 
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
+pagina_atual = 1
+paginas_totais = 5  # Simulação, na prática, isso viria da API
+
+while pagina_atual <= paginas_totais:
+    print(f"Processando página {pagina_atual} de {paginas_totais}")
+    pagina_atual += 1
+
+print("Todas as páginas foram processadas.")
 
 ### Exercício 14. Tentativas de Conexão
 # Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
+tentativas_maximas = 5
+tentativa = 1
+
+while tentativa <= tentativas_maximas:
+    print(f"Tentativa {tentativa} de {tentativas_maximas}")
+    if True:
+        print("Conexão bem-sucedida!")
+        break
+    tentativa += 1
+else:
+    print("Falha ao conectar após várias tentativas.")
 
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
+itens = [1, 2, 3, "parar", 4, 5]
+
+i = 0
+while i < len(itens):
+    if itens[i] == "parar":
+        print("Parada encontrada, encerrando o processamento.")
+        break
+    print(f"Processando item: {itens[i]}")
+    i += 1
