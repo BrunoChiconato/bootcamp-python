@@ -1,6 +1,12 @@
-### 1. Crie uma lista com os números de 1 a 10 e use um loop para imprimir cada número elevado ao quadrado.
-list_numeros = list(range(1,11))
+### 5. Dada a lista ["maçã", "banana", "cereja"] e o dicionário {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}, 
+### calcule o preço total da lista de compras.
 
-for num in list_numeros:
-    num_quadrado = num ** 2
-    print(f"- {num} ao quadrado = {num_quadrado}")
+list_produtos = ["maçã", "banana", "cereja"]
+dict_produtos = {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}
+
+valor = 0
+
+for key in list_produtos:
+    valor += dict_produtos.get(key)
+
+print(f"O valor total da lita de compras é igual a: R${valor}")
