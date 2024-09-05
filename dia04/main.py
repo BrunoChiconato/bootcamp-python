@@ -4,7 +4,7 @@
 
 
 ### 2. Dada a lista ["Python", "Java", "C++", "JavaScript"], remova o item "C++" e adicione "Ruby".
-lista_linguagens = ["Python", "Java", "C++", "JavaScript"]
+lista_linguagens: list = ["Python", "Java", "C++", "JavaScript"]
 
 lista_linguagens.remove("C++")
 lista_linguagens.append("Ruby")
@@ -16,11 +16,11 @@ print(lista_linguagens)
 
 ### 4. Escreva um programa que conta o número de ocorrências de cada caractere em uma string usando um dicionário.
 while True:
-    string = input("Digite uma string qualquer: ").lower().strip()
+    string: str = input("Digite uma string qualquer: ").lower().strip()
 
     if all(caracter.isalpha() or caracter.isspace() for caracter in string):
-        string_sem_espacos = string.replace(" ","")
-        dict_caracteres = {}
+        string_sem_espacos: str = string.replace(" ","")
+        dict_caracteres: dict = {}
 
         for caracter in string_sem_espacos:
             if caracter in dict_caracteres:
