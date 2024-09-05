@@ -1,6 +1,6 @@
 # Aula 04 - Bootcamp de Python
 
-O repositório oficial desta aula pode ser acessado [aqui](https://github.com/seurepositorio/bootcamp-python/aula04).
+O repositório oficial desta aula pode ser acessado [aqui](https://github.com/lvgalvao/data-engineering-roadmap/tree/main/Bootcamp%20-%20Python%20para%20dados/aula04).
 
 ## Conceitos Abordados
 
