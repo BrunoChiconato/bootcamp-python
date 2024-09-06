@@ -86,3 +86,88 @@ for key in list_produtos:
     valor += dict_produtos.get(key)
 
 print(f"O valor total da lita de compras é igual a: R${valor}")
+
+## Exercícios com Dicionários
+
+### 11. Atualização de Dados
+# Objetivo: Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
+
+### 12. Fusão de Dicionários
+# Objetivo: Dados dois dicionários, fundi-los em um único dicionário.
+
+### 13. Filtragem de Dados em Dicionário
+# Objetivo: Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
+condicao: bool = True
+lista_estoque: list = []
+lista_keys: list = ["Produto","Quantidade"]
+
+while condicao:
+    while True:
+        dict_produtos: dict = {}
+        produto: str = input("Insira o nome do produto: ").strip()
+
+        produto_ja_existe: bool = any(item[lista_keys[0]].lower() == produto.lower() for item in lista_estoque)
+
+        if produto_ja_existe:
+            print("Esse produto já foi adicionado. Por favor, insira outro produto.")
+        else:
+            break
+
+    if all(caracter.isalpha() or caracter.isspace() for caracter in produto):
+        dict_produtos[lista_keys[0]] = produto
+
+        while True:
+            try:
+                quantidade: int = int(input(f"Insira a quantidade de estoque para {produto}: "))
+                dict_produtos[lista_keys[1]] = quantidade
+                lista_estoque.append(dict_produtos)
+                break
+            except ValueError:
+                print("Insira apenas números!")
+                
+        while True:
+            resposta = input("Deseja inserir mais registro? (S/N): ").upper()
+
+            if resposta == "N":
+                condicao = False
+                break
+            elif resposta == "S":
+                break
+            else:
+                print("Insira apenas 'S' ou 'N'!")
+    else:
+        print("Insira apenas caracteres!")
+
+lista_estoque_filtrado: list = []
+
+for dict_estoque in lista_estoque:
+    if dict_estoque[lista_keys[1]] > 0:
+        lista_estoque_filtrado.append(dict_estoque)
+
+print("\nOs produtos que possuem unidades no estoque são:")
+for dict_estoque in lista_estoque_filtrado:
+    print(f"- '{dict_estoque[lista_keys[0]]}' possui {dict_estoque[lista_keys[1]]} unidades.")
+
+### 14. Extração de Chaves e Valores
+# Objetivo: Dado um dicionário, criar listas separadas para suas chaves e valores.
+
+### 15. Contagem de Frequência de Itens
+# Objetivo: Dada uma string, contar a frequência de cada caractere usando um dicionário.
+while True:
+    string: str = input("Digite uma string qualquer: ").lower().strip()
+
+    if all(caracter.isalpha() or caracter.isspace() for caracter in string):
+        string_sem_espacos: str = string.replace(" ","")
+        dict_caracteres: dict = {}
+
+        for caracter in string_sem_espacos:
+            if caracter in dict_caracteres:
+                dict_caracteres[caracter] += 1
+            else:
+                dict_caracteres[caracter] = 1
+
+        for caracter, valor in dict_caracteres.items():
+            print(f"- O caracter '{caracter}' aparece {valor} vez(es).")
+        break
+    else:
+        print("Insira apenas caracteres!")
