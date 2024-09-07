@@ -215,6 +215,40 @@ for dict_estoque in lista_estoque_filtrado:
 
 ### 14. Extração de Chaves e Valores
 # Objetivo: Dado um dicionário, criar listas separadas para suas chaves e valores.
+condicao: bool = True
+dict_exemplo: dict = {}
+list_keys: list = []
+list_values: list = []
+
+while condicao:
+
+    while True:
+        key: str = input("Insira a chave do dicionário: ")
+
+        if key in dict_exemplo:
+            print(f"A chave '{key}' já existe. Insira outra chave!")
+        else:
+            value: str = input(f"Insira o valor da chave '{key}': ")
+            dict_exemplo[key] = value
+            break
+
+    while True:
+        resposta: str = input("Deseja inserir outro par chave-valor? (S/N): ").upper()
+
+        if resposta == "N":
+            condicao = False
+            break
+        elif resposta == "S":
+            break
+        else:
+            print("Insira apenas 'S' ou 'N'!")
+
+for key, value in dict_exemplo.items():
+    list_keys.append(key)
+    list_values.append(value)
+
+print(f"As chaves do dicionário fornecido são: {list_keys}")
+print(f"Os valores do dicionário fornecido são: {list_values}")
 
 ### 15. Contagem de Frequência de Itens
 # Objetivo: Dada uma string, contar a frequência de cada caractere usando um dicionário.
