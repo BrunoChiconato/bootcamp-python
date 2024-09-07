@@ -87,6 +87,50 @@ for key in list_produtos:
 
 print(f"O valor total da lita de compras é igual a: R${valor}")
 
+### 6. Eliminação de Duplicatas
+# Objetivo: Dada uma lista de emails, remover todos os duplicados.
+lista_original: list = ["brunochiconato@example.com","brunochiconato@example.com","lvgalvao@example.com",
+                        "jornadadedados@example.com","jornadadedados@example.com","python@example.com"]
+lista_unica: list = []
+
+for item in lista_original:
+    if item not in lista_unica:
+        lista_unica.append(item)
+
+print(lista_unica)
+
+### 7. Filtragem de Dados
+# Objetivo: Dada uma lista de idades, filtrar apenas aquelas que são maiores ou iguais a 18.
+lista_idades: list = []
+lista_idades_filtradas_unicas: list = []
+
+while True:
+    try:
+        idade: int = int(input("Forneça uma idade (digite '0' para parar de inserir): "))
+        if idade == 0:
+            break
+        else:
+            lista_idades.append(idade)
+    except ValueError:
+        print("Insira apenas números!")
+
+for idade in lista_idades:
+    if idade not in lista_idades_filtradas_unicas:
+        if idade >= 18:
+            lista_idades_filtradas_unicas.append(idade)
+
+print("Lista filtrada apenas com idades maiores ou iguais a 18:")
+print(sorted(lista_idades_filtradas_unicas))
+
+### 8. Ordenação Personalizada
+# Objetivo: Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
+
+### 9. Agregação de Dados
+# Objetivo: Dado um conjunto de números, calcular a média.
+
+### 10. Divisão de Dados em Grupos
+# Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
+
 ## Exercícios com Dicionários
 
 ### 11. Atualização de Dados
