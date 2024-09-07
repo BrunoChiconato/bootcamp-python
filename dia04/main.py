@@ -152,6 +152,31 @@ print(f"A média da lista de dados fornecida é igual a: {media}")
 
 ### 10. Divisão de Dados em Grupos
 # Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
+lista_valores: list = []
+
+while True:
+    while True:
+        try:
+            valores: int = int(input("Insira números inteiros. Digite '0' para parar: "))
+            
+            if valores == 0:
+                break
+            else:
+                lista_valores.append(valores)
+
+        except ValueError:
+            print("Insira apenas números inteiros!")
+
+    if not lista_valores:
+        print("Insira algum número!")
+    else:
+        break
+
+lista_pares: list = [numero for numero in lista_valores if numero % 2 == 0]
+lista_impares: list = [numero for numero in lista_valores if numero % 2 != 0]
+
+print(f"Lista de números pares:\n{lista_pares}")
+print(f"Lista de números ímpares:\n{lista_impares}")
 
 ## Exercícios com Dicionários
 
