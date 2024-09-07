@@ -124,6 +124,13 @@ print(sorted(lista_idades_filtradas_unicas))
 
 ### 8. Ordenação Personalizada
 # Objetivo: Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
+lista_pessoas: list = [{"Nome": "Bruno", "Idade": 25},
+                 {"Nome": "Luciano", "Idade": 36},
+                 {"Nome": "Ana", "Idade": 18}]
+
+lista_pessoas_ordenadas: list = sorted(lista_pessoas, key = lambda lista_pessoas: lista_pessoas["Nome"])
+
+print(lista_pessoas_ordenadas)
 
 ### 9. Agregação de Dados
 # Objetivo: Dado um conjunto de números, calcular a média.
