@@ -127,6 +127,28 @@ print(sorted(lista_idades_filtradas_unicas))
 
 ### 9. Agregação de Dados
 # Objetivo: Dado um conjunto de números, calcular a média.
+lista_dados: list = []
+
+while True:
+    while True:
+        try:
+            dados: float = float(input("Insira números (digite '0' para parar de inserir números): "))
+
+            if dados == 0:
+                break
+            else:
+                lista_dados.append(dados)
+                
+        except ValueError:
+            print("Insira apenas números")
+
+    if not lista_dados:
+        print("A lista de dados não possui nenhum dado. Insira dados!")
+    else:
+        break
+
+media: float = sum(lista_dados)/len(lista_dados)
+print(f"A média da lista de dados fornecida é igual a: {media}")
 
 ### 10. Divisão de Dados em Grupos
 # Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
