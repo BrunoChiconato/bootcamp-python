@@ -94,6 +94,12 @@ print(f"O valor total da lita de compras é igual a: R${valor}")
 
 ### 12. Fusão de Dicionários
 # Objetivo: Dados dois dicionários, fundi-los em um único dicionário.
+dict_1: dict = {"Produto":"Porta"}
+dict_2: dict = {"Quantidade": 5}
+
+dict_union: dict = {**dict_1, **dict_2}
+
+print(dict_union)
 
 ### 13. Filtragem de Dados em Dicionário
 # Objetivo: Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
