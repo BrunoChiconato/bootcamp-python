@@ -91,6 +91,65 @@ print(f"O valor total da lita de compras é igual a: R${valor}")
 
 ### 11. Atualização de Dados
 # Objetivo: Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
+condicao: bool = True
+lista_produtos: list = []
+lista_keys: list = ["Produto","Preço"]
+
+while condicao:
+    while True:
+        dict_produtos: dict = {}
+        produto: str = input("Insira o nome do produto: ").strip()
+
+        produto_existe: bool = any(item[lista_keys[0]].lower() == produto.lower() for item in lista_produtos)
+
+        if produto_existe:
+            print("Esse produto já foi adicionado. Por favor, insira outro produto.")
+        else:
+            break
+
+    if all(caracter.isalpha() or caracter.isspace() for caracter in produto):
+        dict_produtos[lista_keys[0]] = produto
+
+        while True:
+            try:
+                preco: float = float(input(f"Insira o preço do produto '{produto}': "))
+                dict_produtos[lista_keys[1]] = preco
+                lista_produtos.append(dict_produtos)
+                break
+            except ValueError:
+                print("Insira apenas números!")
+                
+        while True:
+            resposta = input("Deseja inserir mais registro? (S/N): ").upper()
+
+            if resposta == "N":
+                condicao = False
+                break
+            elif resposta == "S":
+                break
+            else:
+                print("Insira apenas 'S' ou 'N'!")
+    else:
+        print("Insira apenas caracteres!")
+
+produto: str = input("Deseja atualizar o preço de qual produto? ")
+produto_existe: bool = any(item[lista_keys[0]].lower() == produto.lower() for item in lista_produtos)
+
+if produto_existe:
+    for dict_produtos in lista_produtos:
+        if dict_produtos[lista_keys[0]].lower() == produto.lower():
+            while True:
+                try:
+                    valor_novo: float = float(input(f"Insira o novo valor do produto '{produto}': "))
+                    valor_antigo: float = dict_produtos["Preço"]
+                    dict_produtos["Preço"] = valor_novo
+                    print(f"\nO produto '{produto}' teve uma atualização de preço:\nAntigo\tNovo\nR${valor_antigo}\tR${valor_novo}")
+                    break
+                except ValueError:
+                    print("Insira apenas números!")
+            break
+else:
+    print(f"O produto '{produto}' não existe!")
 
 ### 12. Fusão de Dicionários
 # Objetivo: Dados dois dicionários, fundi-los em um único dicionário.
