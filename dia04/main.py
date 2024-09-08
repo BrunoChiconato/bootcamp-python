@@ -443,6 +443,42 @@ if __name__ == "__main__":
 
 ### 19. Implemente uma função que receba dois argumentos: uma lista de números e um número. 
 # A função deve retornar todas as combinações de pares na lista que somem ao número dado.
+def somar_numeros_lista(lista_numeros: list, numero: float) -> list:
+    """
+    Soma um número a cada elemento de uma lista de números.
+
+    Esta função recebe uma lista de números e um número. 
+    Retorna uma nova lista onde o número fornecido é somado a cada 
+    elemento da lista original.
+
+    Args:
+        lista_numeros (list): Lista contendo números (int ou float).
+        numero (float): Número que será somado a cada elemento da lista.
+
+    Returns:
+        list: Nova lista contendo os resultados da soma.
+    
+    Raises:
+        TypeError: Se lista_numeros não for uma lista ou se numero não for
+                   um número válido (int ou float).
+        ValueError: Se houver elementos inválidos na lista (que não sejam 
+                    números int ou float).
+    """
+    if not isinstance(lista_numeros, list):
+        raise TypeError("O primeiro argumento deve ser uma lista.")
+    if not isinstance(numero, (int, float)) or isinstance(numero, bool):
+        raise TypeError("O segundo argumento deve ser um número válido (int ou float).")
+
+    for num in lista_numeros:
+        if not isinstance(num, (int, float)) or isinstance(num, bool):
+            raise ValueError("Todos os elementos da lista devem ser números válidos (int ou float).")
+
+    return [num + numero for num in lista_numeros]
+
+if __name__ == "__main__":
+    lista = [1, 2, 3, 4]
+    numero = 2
+    print(somar_numeros_lista(lista, numero))
 
 
 ### 20. Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
