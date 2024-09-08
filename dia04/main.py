@@ -388,8 +388,31 @@ def somar_numeros_lista (lista_numeros: list) -> float:
 if __name__ == "__main__":
     lista = [1, 2, 3, "Bruno", True]
     print(somar_numeros_lista(lista))
-    
+
 ### 17. Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário.
+def verifica_numero_primo (numero: int) -> bool:
+    """
+    Função que verifica se um número é primo.
+    
+    :paramêtro numero: O número a ser verificado.
+    :return: True se o número for primo, False caso contrário.
+    """
+    if isinstance(numero,int) and not isinstance(numero,bool):
+        if numero < 2:
+            return print(False)
+        
+        for i in range(2, int(numero ** 0.5) + 1):
+            if numero % i == 0:
+                return print(False)
+        
+        return print(True)
+        
+    else:
+        return print("A entrada fornecida não é um número inteiro!")
+    
+if __name__ == "__main__":
+    verifica_numero_primo(5)
+    
 ### 18. Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
 ### 19. Implemente uma função que receba dois argumentos: uma lista de números e um número. 
 # A função deve retornar todas as combinações de pares na lista que somem ao número dado.
