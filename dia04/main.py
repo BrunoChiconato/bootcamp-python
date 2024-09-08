@@ -368,3 +368,29 @@ while True:
         break
     else:
         print("Insira apenas caracteres!")
+
+## Exercícios de Funções
+
+### 16. Escreva uma função que receba uma lista de números e retorne a soma de todos os números.
+def somar_numeros_lista (lista_numeros: list) -> float:
+    """
+    Função que recebe uma lista. Verifica se essa lista possui apenas números.
+    Retorna a soma dos números da lista.
+    """
+    soma_lista: float = 0
+
+    for numero in lista_numeros:
+        if isinstance(numero, (float,int)) and not isinstance(numero, bool):
+            soma_lista += numero
+
+    return soma_lista
+
+if __name__ == "__main__":
+    lista = [1, 2, 3, "Bruno", True]
+    print(somar_numeros_lista(lista))
+    
+### 17. Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário.
+### 18. Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
+### 19. Implemente uma função que receba dois argumentos: uma lista de números e um número. 
+# A função deve retornar todas as combinações de pares na lista que somem ao número dado.
+### 20. Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
