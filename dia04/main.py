@@ -394,7 +394,7 @@ def verifica_numero_primo (numero: int) -> bool:
     """
     Função que verifica se um número é primo.
     
-    :paramêtro numero: O número a ser verificado.
+    :param numero: O número a ser verificado.
     :return: True se o número for primo, False caso contrário.
     """
     if isinstance(numero,int) and not isinstance(numero,bool):
@@ -412,8 +412,35 @@ def verifica_numero_primo (numero: int) -> bool:
     
 if __name__ == "__main__":
     verifica_numero_primo(5)
-    
+
 ### 18. Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
+def reverter_string(string: str) -> str:
+    """
+    Função que verifica se a entrada é uma string. Retira espaços antes/depois da string fornecida. Verifica se a string fornecida está vazia. 
+    Caso não esteja vazia, verifica se a string fornecida possui apenas caracteres alfanuméricos ou espaços entre as strings. 
+    Retorna a string revertida.
+
+    :param string: String a ser revertida
+    :return: String inserida, porém reveritda
+    """
+    if isinstance(string,str):
+        string_sem_espacos: str = string.strip()
+
+        if string_sem_espacos != "":
+            if all(caracter.isalpha() or caracter.isspace() for caracter in string_sem_espacos):
+                string_sem_espacos_revertida: str = string_sem_espacos[::-1]
+
+                return print(string_sem_espacos_revertida)
+            else:
+                return print("Forneça apenas caracteres. Não utilize caracteres especiais ou pontuações!")
+        else:
+            return print("Insira alguma string!")
+    else:
+        return print("Forneça apenas caracteres!")
+
+if __name__ == "__main__":
+    reverter_string("Bootcamp de Python da Jornada de Dados")
+    
 ### 19. Implemente uma função que receba dois argumentos: uma lista de números e um número. 
 # A função deve retornar todas as combinações de pares na lista que somem ao número dado.
 ### 20. Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
