@@ -440,7 +440,45 @@ def reverter_string(string: str) -> str:
 
 if __name__ == "__main__":
     reverter_string("Bootcamp de Python da Jornada de Dados")
-    
+
 ### 19. Implemente uma função que receba dois argumentos: uma lista de números e um número. 
 # A função deve retornar todas as combinações de pares na lista que somem ao número dado.
+
+
 ### 20. Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
+def ordenar_lista_chaves (dados: dict) -> list:
+    """
+    Função que recebe um dicionário. Verifica se o parâmetro fornecido é um dicionário.
+    Se o parâmetro for um dicionário retorna uma lista ordenada de suas chaves.
+
+    :param dados: Dicionário a ser inserido.
+    :return: Lista ordenada das chaves do dicionário fornecido.
+    """
+    if isinstance(dados,dict):
+        lista_chaves: list = list(dados.keys())
+        lista_chaves.sort()
+
+        return print(lista_chaves)
+    else:
+        return print("Insira um dicionário!")
+
+if __name__ == "__main__":
+    dados_aleatorios = {
+        "nome": "João Pereira",
+        "idade": 34,
+        "cidade": "Rio de Janeiro",
+        "salario": 4200.50,
+        "empregado": False,
+        "empresa": "Tech Solutions",
+        "cargo": "Analista de Dados",
+        "telefone": "+55 21 98765-4321",
+        "email": "joao.pereira@email.com",
+        "pontos_fidelidade": 150,
+        "ultima_compra": "2024-08-20",
+        "assinatura_premium": True,
+        "cpf": "123.456.789-00",
+        "estado_civil": "Solteiro",
+        "altura_metros": 1.75
+    }
+    
+    ordenar_lista_chaves(dados_aleatorios)
