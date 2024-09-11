@@ -17,7 +17,7 @@ def solicita_nome(mensagem: str) -> str:
                 raise ValueError("O nome não deve conter números.")
             elif not nome.isalnum():
                 raise ValueError("O nome não pode ter caracteres especiais.")
-            
+
             return nome
 
         except ValueError as e:
@@ -42,9 +42,10 @@ def solicita_valor_positivo(mensagem: str) -> float:
                 raise ValueError("Por favor, digite um valor positivo.")
 
             return valor
-        
+
         except ValueError as e:
             print(f"Erro: {e} Tente novamente.")
+
 
 def calcula_kpi(salario: float, bonus: float) -> float:
     """
@@ -60,11 +61,13 @@ def calcula_kpi(salario: float, bonus: float) -> float:
     bonus_recebido = 1000 + salario * bonus
     return bonus_recebido
 
+
 if __name__ == "__main__":
     nome = solicita_nome("Digite seu nome: ")
     salario = solicita_valor_positivo("Digite o valor do seu salário: ")
     bonus = solicita_valor_positivo("Digite o valor do bônus recebido: ")
     bonus_recebido = calcula_kpi(salario, bonus)
 
-    print(f"{nome}, seu salário é R${salario:.2f} e seu bônus final é R${bonus_recebido:.2f}.")
-
+    print(
+        f"{nome}, seu salário é R${salario:.2f} e seu bônus final é R${bonus_recebido:.2f}."
+    )

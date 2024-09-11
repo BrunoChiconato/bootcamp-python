@@ -25,4 +25,6 @@ if all(char.isalpha() or char.isspace() for char in nome):
     except ValueError:
         print("O campo salário só pode conter números")
 else:
-    print("O campo 'nome' não pode conter caracteres especiais, pontuações e/ou números")
+    print(
+        "O campo 'nome' não pode conter caracteres especiais, pontuações e/ou números"
+    )

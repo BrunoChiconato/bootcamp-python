@@ -11,6 +11,3 @@ print(f"A soma de {v1} e {v2} é igual a:", v1 + v2)
 nome = input("Digite seu nome: ")
 quantidade_letras = len(nome)
 print(f"A quantidade de caracteres no seu nome é:: {quantidade_letras}")
-
-
-

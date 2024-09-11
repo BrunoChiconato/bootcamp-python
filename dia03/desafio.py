@@ -15,7 +15,7 @@ condicao = True
 while condicao:
     nome = input("Digite seu nome: ")
 
-    if all(char.isalpha() or char.isspace() for char in nome):    
+    if all(char.isalpha() or char.isspace() for char in nome):
         while True:
             try:
                 salario = float(input("Informe seu salário: "))
@@ -37,7 +37,9 @@ while condicao:
             except ValueError:
                 print("O campo bônus só pode conter números")
     else:
-        print("O campo 'nome' não pode conter caracteres especiais, pontuações e/ou números!")
+        print(
+            "O campo 'nome' não pode conter caracteres especiais, pontuações e/ou números!"
+        )
 
 valor_final = CONSTANTE_BONUS + salario * bonus
 print(f"Parabéns {nome}! O valor a ser recebido é de: R${valor_final}")
