@@ -38,6 +38,35 @@ def calcular_media_valores_de_lista(lista_num: list) -> float:
 # 3. Contar Valores Únicos em uma Lista
 
 # 4. Converter Celsius para Fahrenheit em uma Lista
+def conversao_celsius_fahrenheit(temps_celsius: list) -> list:
+    temps_fahrenheit: list = []
+    contador: int = 0
+
+    try:
+        if not isinstance(temps_celsius, list):
+            raise TypeError("O parametro fornecido não é uma lista!")
+        
+        for temp_celsius in temps_celsius:
+            try:
+                if not isinstance(temp_celsius, float) and isinstance(temp_celsius, bool):
+                    raise TypeError(f"O elemento '{temp_celsius}' não é uma temperatura válida!")
+                
+                temp_fahrenheit: float = temp_celsius * (9/5) + 32
+                temps_fahrenheit.append(temp_fahrenheit)
+                contador += 1
+                
+            except Exception as e:
+                    print(f"Erro: {e} Tente novamente.")
+                    return []
+        
+        if contador == 0:
+            raise ValueError("A lista não possui nenhum elemento válido!") 
+
+    except Exception as e:
+        print(f"Erro: {e} Tente novamente.")
+        return []
+    
+    return temps_fahrenheit
 
 # 5. Calcular Desvio Padrão de uma Lista
 
@@ -45,8 +74,8 @@ def calcular_media_valores_de_lista(lista_num: list) -> float:
 
 
 def main():
-    lista_numeros = ["1",True,3,"4",5]
-    print(calcular_media_valores_de_lista(lista_numeros))
+    lista_numeros = [0.0]
+    print(conversao_celsius_fahrenheit(lista_numeros))
 
 if __name__ == "__main__":
     main()
