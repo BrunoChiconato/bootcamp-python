@@ -65,6 +65,35 @@ def filtrar_dados_acima_de_limite(lista_nums: list, limite: int) -> list:
     return lista_nums_filtrada
 
 # 3. Contar Valores Únicos em uma Lista
+def contar_valores_unicos(lista_valores: list) -> list:
+    dict_aux: dict = {}
+    lista_aux: list = []
+
+    try:
+        if not isinstance(lista_valores, list):
+            raise TypeError("O parametro fornecido não é uma lista!")
+        
+        if len(lista_valores) == 0:
+            raise TypeError("A lista está vazia!")
+        
+        for valor in lista_valores:
+            if isinstance(valor, str):
+                valor = valor.lower()
+            
+            if valor in dict_aux:
+                dict_aux[valor] += 1
+            elif valor not in dict_aux:
+                dict_aux[valor] = 1
+
+        for key, value in dict_aux.items():
+            if value == 1:
+                lista_aux.append(key)
+
+    except Exception as e:
+        print(f"Erro: {e} Tente novamente.")
+        return []
+    
+    return len(lista_aux)
 
 # 4. Converter Celsius para Fahrenheit em uma Lista
 def conversao_celsius_fahrenheit(temps_celsius: list) -> list:
@@ -134,9 +163,8 @@ def calcular_desvio_padrao(lista_nums: list) -> float:
 
 
 def main():
-    lista_numeros = True
-    limite = 2.5
-    print(filtrar_dados_acima_de_limite(lista_numeros, limite))
+    lista_valores = ["brasil", "Brasil", "BRASIL", 2, 4, 1]
+    print(contar_valores_unicos(lista_valores))
 
 if __name__ == "__main__":
     main()
