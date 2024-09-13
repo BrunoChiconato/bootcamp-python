@@ -69,13 +69,44 @@ def conversao_celsius_fahrenheit(temps_celsius: list) -> list:
     return temps_fahrenheit
 
 # 5. Calcular Desvio Padrão de uma Lista
+def calcular_desvio_padrao(lista_nums: list) -> float:
+    import numpy as np
+
+    valores_validos = []
+
+    try:
+        if not isinstance(lista_nums, list):
+            raise TypeError("O parametro fornecido não é uma lista!")
+        
+        for num in lista_nums:
+            try:
+                if not isinstance(num, (int,float)) or isinstance(num, bool):
+                    raise TypeError(f"O elemento '{num}' não é um inteiro/float!")
+                
+                valores_validos.append(num)
+                
+            except Exception as e:
+                print(f"Erro {e} Tente novamente.")
+                return 0.0
+
+        if len(valores_validos) == 0:
+            raise ValueError("A lista não possui nenhum elemento válido!") 
+        
+        desvio_padrao = np.std(valores_validos)
+
+    except Exception as e:
+        print(f"Erro {e} Tente novamente.")
+        return 0.0
+
+
+    return desvio_padrao
 
 # 6. Encontrar Valores Ausentes em uma Sequência
 
 
 def main():
-    lista_numeros = [0.0]
-    print(conversao_celsius_fahrenheit(lista_numeros))
+    lista_numeros = [10, 12, 23, 23, 16, 23, 21, 16]
+    print(calcular_desvio_padrao(lista_numeros))
 
 if __name__ == "__main__":
     main()
