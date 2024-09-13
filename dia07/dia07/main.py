@@ -156,10 +156,14 @@ def calcular_desvio_padrao(lista_nums: list) -> float:
         print(f"Erro: {e} Tente novamente.")
         return 0.0
 
-
     return desvio_padrao
 
 # 6. Encontrar Valores Ausentes em uma Sequência
+def encontrar_valores_ausentes(sequencia: List[int]) -> List[int]:
+    from typing import List
+    
+    completo = set(range(min(sequencia), max(sequencia) + 1))
+    return list(completo - set(sequencia))  
 
 
 def main():
