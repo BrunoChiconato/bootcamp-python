@@ -1,6 +1,9 @@
 # Exercícios
 
 # 1. Calcular Média de Valores em uma Lista
+from typing import List
+
+
 def calcular_media_valores_de_lista(lista_num: list) -> float:
     media: float = 0
     soma: float = 0
@@ -128,7 +131,7 @@ def conversao_celsius_fahrenheit(temps_celsius: list) -> list:
 
 # 5. Calcular Desvio Padrão de uma Lista
 def calcular_desvio_padrao(lista_nums: list) -> float:
-    import numpy as np
+    import numpy as np # type: ignore
 
     valores_validos = []
 
@@ -161,10 +164,9 @@ def calcular_desvio_padrao(lista_nums: list) -> float:
 # 6. Encontrar Valores Ausentes em uma Sequência
 def encontrar_valores_ausentes(sequencia: List[int]) -> List[int]:
     from typing import List
-    
+
     completo = set(range(min(sequencia), max(sequencia) + 1))
     return list(completo - set(sequencia))  
-
 
 def main():
     lista_valores = ["brasil", "Brasil", "BRASIL", 2, 4, 1]
