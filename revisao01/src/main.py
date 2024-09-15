@@ -20,6 +20,11 @@ print(f"Adicionando o número 11 a lista: {lista_numeros}")
 lista_numeros.remove(5)
 print(f"Removendo o numero 5 da lista: {lista_numeros}")
 
+# 5. Iteração sobre Listas 
+# Itere sobre a lista numeros e imprima apenas os números pares
+print("Número pares na lista 'numeros':")
+[print(f"- {num}") for num in lista_numeros if num % 2 == 0]
+
 # 6. List Comprehension 
 # Crie uma nova lista chamada quadrados que contenha o quadrado de cada número
 # em numeros usando list comprehension.
