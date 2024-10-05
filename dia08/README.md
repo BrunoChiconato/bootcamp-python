@@ -46,10 +46,11 @@ graph TD;
     A[Início] --> B[Ler Arquivos JSON];
     B --> C[Concatenar Dados];
     C --> D[Aplicar Transformações];
-    D --> E[Salvar em CSV]
+    D --> E[Salvar em CSV];
     D --> F[Salvar em Parquet];
-    E,F --> G[Registrar Logs];
-    E,F --> G[Fim];
+    E --> G[Registrar Logs];
+    F --> G[Registrar Logs];
+    G --> H[Fim];
 ```
 
 ## Como Executar
