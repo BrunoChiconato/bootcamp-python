@@ -48,10 +48,8 @@ graph TD;
     C --> D[Aplicar Transformações];
     D --> E[Salvar em CSV]
     D --> F[Salvar em Parquet];
-    E --> G[Registrar Logs];
-    F --> G[Registrar Logs];
-    E --> G[Fim];
-    F --> G[Fim];
+    E,F --> G[Registrar Logs];
+    E,F --> G[Fim];
 ```
 
 ## Como Executar
