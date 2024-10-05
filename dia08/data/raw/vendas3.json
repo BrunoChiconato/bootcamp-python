@@ -1,0 +1,23 @@
+[
+    {
+        "Produto": "Camiseta Esportiva",
+        "Categoria": "Vestuário",
+        "Quantidade": 20,
+        "Venda": 50,
+        "Data": "2023-04-05"
+    },
+    {
+        "Produto": "Tênis de Corrida",
+        "Categoria": "Vestuário",
+        "Quantidade": 5,
+        "Venda": 200,
+        "Data": "2023-04-05"
+    },
+    {
+        "Produto": "Calça Jeans",
+        "Categoria": "Vestuário",
+        "Quantidade": 12,
+        "Venda": 100,
+        "Data": "2023-04-05"
+    }
+]
