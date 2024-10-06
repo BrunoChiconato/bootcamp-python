@@ -18,7 +18,7 @@ Nesta aula, realizamos um ETL simples:
 
 1. **Extract**: Leitura de dados de um arquivo JSON utilizando Pandas.
 2. **Transform**: Concatenar os dados extraídos em um único `DataFrame` e aplicar transformações específicas.
-3. **Load**: Salvar o `DataFrame` resultante em um arquivo CSV e/ou Parquet.
+3. **Load**: Salvar o `DataFrame` resultante em um arquivo CSV ou Parquet.
 
 ### Motivação
 
@@ -36,7 +36,7 @@ Criar um pipeline ETL que:
 
 1. **Extract**: Leia dados de múltiplos arquivos JSON.
 2. **Transform**: Concatene os dados em um único `DataFrame`, aplique transformações necessárias.
-3. **Load**: Salve o `DataFrame` resultante em um arquivo Parquet.
+3. **Load**: Salve o `DataFrame` resultante em um arquivo Parquet ou CSV.
 4. **Logging**: Utilize o Loguru para registrar cada etapa do processo, incluindo quaisquer erros ou exceções.
 
 ### Fluxo
