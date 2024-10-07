@@ -4,7 +4,7 @@ O repositório oficial desta aula pode ser acessado [aqui](https://github.com/lv
 
 ## Conteúdo
 
-Nesta aula, exploramos como realizar um processo de **ETL (Extract, Transform, Load)** utilizando Python e a biblioteca **Pandas**. Além disso, abordamos o uso avançado de funções em Python, incluindo a criação de **decoradores** e a implementação de **logs** utilizando a biblioteca **Loguru**. Esses conceitos são essenciais para o desenvolvimento de pipelines de dados robustos e para o monitoramento eficaz de aplicações.
+Nesta aula, exploramos como realizar um processo de **ETL (Extract, Transform, Load)** utilizando Python e a biblioteca **Pandas**. Esses conceitos são essenciais para o desenvolvimento de pipelines de dados robustos.
 
 ### ETL com Pandas
 
@@ -22,13 +22,13 @@ Nesta aula, realizamos um ETL simples:
 
 ### Motivação
 
-A realização de processos ETL é uma atividade central na preparação e integração de dados para análises avançadas. Utilizar ferramentas como **Pandas** facilita a manipulação e transformação dos dados de forma eficiente. Além disso, implementar **logs** em nossas aplicações é crucial para monitorar, depurar e manter sistemas complexos, especialmente em ambientes de produção.
+A realização de processos ETL é uma atividade central na preparação e integração de dados para análises avançadas. Utilizar ferramentas como **Pandas** facilita a manipulação e transformação dos dados de forma eficiente.
 
 ### Conclusão
 
-O uso de **Pandas** para processos ETL simplifica a manipulação de dados, permitindo operações eficientes e poderosas. Complementar isso com **logs** bem estruturados utilizando o **Loguru** melhora significativamente a capacidade de monitorar e depurar aplicações, especialmente em ambientes de produção.
+O uso de **Pandas** para processos ETL simplifica a manipulação de dados, permitindo operações eficientes e poderosas.
 
-## Desafio: Implementando um ETL com Logs
+## Desafio: Implementando uma ETL
 
 ### Objetivo
 
@@ -37,7 +37,6 @@ Criar um pipeline ETL que:
 1. **Extract**: Leia dados de múltiplos arquivos JSON.
 2. **Transform**: Concatene os dados em um único `DataFrame`, aplique transformações necessárias.
 3. **Load**: Salve o `DataFrame` resultante em um arquivo Parquet ou CSV.
-4. **Logging**: Utilize o Loguru para registrar cada etapa do processo, incluindo quaisquer erros ou exceções.
 
 ### Fluxo
 
@@ -48,9 +47,8 @@ graph TD;
     C --> D[Aplicar Transformações];
     D --> E[Salvar em CSV];
     D --> F[Salvar em Parquet];
-    E --> G[Registrar Logs];
-    F --> G[Registrar Logs];
-    G --> H[Fim];
+    E --> G[Fim];
+    F --> G[Fim];
 ```
 
 ## Como Executar
@@ -81,5 +79,3 @@ Para executar o script Python com a solução do desafio, siga os passos abaixo:
    ```sh
    poetry run python main.py
    ```
-
-A execução do script iniciará o processo ETL com logging detalhado de cada etapa. Verifique o arquivo de log gerado para acompanhar o fluxo de execução e possíveis mensagens de erro.
