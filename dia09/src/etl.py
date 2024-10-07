@@ -1,9 +1,12 @@
 import pandas as pd #type: ignore
 import glob
 import os
-from loguru_decorator import loguru_decorator
+from loguru import logger #type: ignore
+from log_decorator import log_decorator
+from time_log_decorator import time_log_decorator
 
-@loguru_decorator
+@time_log_decorator
+#@log_decorator
 def ler_arquivos_json(pasta: str) -> pd.DataFrame:
     """
     Lê todos os arquivos JSON em uma pasta específica e os concatena em um único DataFrame.
@@ -26,8 +29,8 @@ def ler_arquivos_json(pasta: str) -> pd.DataFrame:
     else:
         raise ValueError("Nenhum arquivo JSON válido foi encontrado.")
 
-
-@loguru_decorator
+@time_log_decorator
+#@log_decorator
 def calcular_venda_total(arquivo_json: pd.DataFrame) -> pd.DataFrame:
     """
     Calcula a venda total multiplicando as colunas 'Quantidade' e 'Venda' e adiciona o resultado
@@ -44,8 +47,8 @@ def calcular_venda_total(arquivo_json: pd.DataFrame) -> pd.DataFrame:
     else:
         raise KeyError("As colunas 'Quantidade' e 'Venda' são necessárias para o cálculo.")
 
-
-@loguru_decorator
+@time_log_decorator
+#@log_decorator
 def solicitar_extensao() -> str:
     """
     Solicita ao usuário o formato de arquivo de saída (CSV ou Parquet) até que uma resposta válida seja fornecida.
@@ -61,7 +64,8 @@ def solicitar_extensao() -> str:
         else:
             print("Insira apenas 'csv' ou 'parquet'!")
 
-@loguru_decorator
+@time_log_decorator
+#@log_decorator
 def salvar_como(arquivo_json: pd.DataFrame, extensao: str, path: str):
     """
     Salva o DataFrame em um arquivo no formato especificado (CSV ou Parquet).
@@ -78,3 +82,5 @@ def salvar_como(arquivo_json: pd.DataFrame, extensao: str, path: str):
         arquivo_json.to_csv(output_file, index=False)
     elif extensao == 'parquet':
         arquivo_json.to_parquet(output_file, index=False)
+    
+    logger.info(f'Arquivo salvo com sucesso em: {output_file}')

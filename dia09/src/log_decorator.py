@@ -4,7 +4,7 @@ from functools import wraps
 logger.remove()
 logger.add('./app.log', format="{time} {level} {message} {file}", level="INFO")
 
-def loguru_decorator(func):
+def log_decorator(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         logger.info(f'Chamando a função {func.__name__} com args:{args} e kwargs:{kwargs}')
