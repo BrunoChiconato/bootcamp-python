@@ -1,0 +1,23 @@
+[
+    {
+        "Produto": "Geladeira Frost Free",
+        "Categoria": "Eletrodomésticos",
+        "Quantidade": 2,
+        "Venda": 2000,
+        "Data": "2023-03-10"
+    },
+    {
+        "Produto": "Liquidificador",
+        "Categoria": "Eletrodomésticos",
+        "Quantidade": 10,
+        "Venda": 120,
+        "Data": "2023-03-10"
+    },
+    {
+        "Produto": "Micro-ondas",
+        "Categoria": "Eletrodomésticos",
+        "Quantidade": 4,
+        "Venda": 300,
+        "Data": "2023-03-10"
+    }
+]
